@@ -139,7 +139,7 @@ public class txnscript
 	}
     public static boolean initDb(){
 		
-		String sql = "DROP TABLE IF EXISTS 'personnes' ; DROP TABLE IF EXISTS 'villes' ;CREATE TABLE IF NOT EXISTS villes ( id SERIAL , nom VARCHAR(70), code_postal INTEGER, PRIMARY KEY(id) ); CREATE TABLE IF NOT EXISTS personnes ( id SERIAL , nom VARCHAR(70), prenom VARCHAR(70), fk_ville INTEGER, PRIMARY KEY(id) ); ALTER TABLE personnes ADD CONSTRAINT cle_etrangere_personnes_vers_villes FOREIGN KEY (fk_ville) REFERENCES villes(id) MATCH SIMPLE ;";
+		String sql = "DROP TABLE IF EXISTS 'personnes' ; DROP TABLE IF EXISTS 'villes' ;CREATE TABLE IF NOT EXISTS villes ( id SERIAL NOT NULL , nom VARCHAR(70), code_postal INTEGER, PRIMARY KEY(id) ); CREATE TABLE IF NOT EXISTS personnes ( id SERIAL NOT NULL, nom VARCHAR(70), prenom VARCHAR(70), fk_ville INTEGER, PRIMARY KEY(id) ); ALTER TABLE personnes ADD CONSTRAINT cle_etrangere_personnes_vers_villes FOREIGN KEY (fk_ville) REFERENCES villes(id) MATCH SIMPLE ;";
 
 		try
 		{
