@@ -144,8 +144,6 @@ public class txnscript
 		try
 		{
 				PreparedStatement pstmt = cnx.prepareStatement(sql) ;
-				pstmt.setString(1, nom);
-				pstmt.setDouble(2, codePostal);
 				pstmt.executeUpdate();
 		}
 		catch (SQLException e)
