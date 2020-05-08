@@ -42,6 +42,7 @@ public class simplissimeCmdline {
 
 			String display = "" ;
 			txn = txnscript.getTxnscript() ;
+			txn.initDb();
 			
 			// java -cp ".\postgresql-42.2.5.jar;commons-cli-1.4.jar;." simplissimeCmdline -u -id 178 -nom MER -cp 41500
             if ( cl.hasOption('u') )
